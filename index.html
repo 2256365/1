@@ -2,30 +2,139 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Документ HTML5</title>
+        <title>1</title>
+        <style>
+            body, html {
+                margin:0;
+                padding:0;
+                height: 100%;
+            }
+            body {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                flex-grow: 1;
+            }
+            header {
+                height: 50px;
+                background-color: rgb(220, 220, 220);
+                align-content: center;
+                text-align: center;
+                flex-shrink: 0;
+                border-bottom: 2px solid #aeaeae;
+            }
+            footer {
+                height: 30px;
+                background-color: #bebebe;
+                flex-shrink: 0;
+            }
+            #wrap {
+                display: flex;
+                height: 100%;
+                flex-grow: 1;
+            }
+            main {
+                background-color: white;
+                flex: 1;
+                display: flex;
+                text-align: center;
+            }
+
+            aside {
+                background-color: rgb(190, 190, 190);
+                text-align: center;
+                width: 160px;
+            }
+            a { 
+                color: #535353;
+            }
+            a:hover::before, a:hover { 
+                color: #003c8b;
+                font-weight:bold;
+                content: "> ";
+            }
+            a:hover::after {
+                content: " <";
+            }
+            a:hover, a:active {
+                 text-decoration: none;
+            }
+            input, select {
+                 border: 2px outset ; outline: none;
+            }
+            :is(input, select):is(:hover), input[name=login]:focus  {
+                border: 2px inset;
+            }
+
+            input[type="checkbox"] {
+                accent-color: #0080ff;
+            }
+            input[placeholder] {
+                text-align: center;
+            }
+            #wrap {
+                background-color: #bebebe;
+            }
+            iframe {
+                border: none; outline: none;
+                
+            }
+            .h {
+                padding-bottom: 50px;
+            }
+            #wr {
+                display: flex;
+                align-content: center;
+                font-size: 18px;
+                height: 30px;
+            }
+            #wr > div {
+                flex: 1;
+                text-align: center;
+                align-content: center;
+            }
+            #wr > aside {
+                align-content: center;
+
+            }
+        </style>
     </head>
     <body>
-        <h1>Документ HTML5</h1>
-        <div>
-            <img src=1.jpg alt="Fumo-Reimu looking at the sky." style="width: 350px">
+        <header>
+            <div id="form"><form method="get" action="index.html">
+                <input name="login" placeholder="Code" maxlength="6">
+                <input type="submit" value="Login" disabled>
+                <input type="reset" value="Reset">
+                <input type="checkbox" style="vertical-align: middle;">
+                <select name="rrrr">
+                    <option value="f">test</option>
+                    <option value="f">fff</option>
+                    <option value="f">fff</option>
+                    <option value="f">fff</option>
+                </select>
+            </form>
+            </div>
+        </header> 
+        <div id="wr">
+        <aside>Sidebare</aside>
+        <div>Main</div>
+        <aside>Sidebare</aside>
         </div>
-        <div>
-            - Fumo-fumo....... <br>
-            <br><b>EASTERN TOUHOU TOP</b>
-            <ol>
-                <li>Reimy</li>
-                <li>Marisa</li>
-                <li>Alice</li>
-                <li>Yuuka</li>
-                <li>Patchouli</li>
-            </ol>
-            <b>FUMO</b>
-            <ul style="list-style-type: armenian;">
-                <li>Fumo-fumo</li>
-                <li>Fumo-fu</li>
-                <li>Funo</li>
-            </ul>
+        <div id="wrap">
+        <aside>
+            <nav>
+            <a href="Fumo.html" target="_top">FUMO</a>
+            <br><a href="Test.html" target="_top">TEST</a>
+            </nav>
+        </aside>
+        </aside>
+        <main>
+                <iframe src="Fumo.html" width="100%"></iframe>
+        </main>
+        <aside class="wr">
+        <aside>Sidebare</aside>
+        </aside>
         </div>
-        <div> <audio src="1.mp3" autoplay loop controls></audio> </div>
+        <footer>Footer</footer>
     </body>
 </html>
